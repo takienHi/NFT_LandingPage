@@ -1,7 +1,9 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors');
 module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   corePlugins: {},
+  darkMode: 'class',
   theme: {
     screens: {
       sm: '575px',
@@ -18,6 +20,7 @@ module.exports = {
       padding: '1rem',
     },
     colors: {
+      pink: colors.pink,
       transparent: 'transparent',
       current: 'currentColor',
       white: '#ffffff',

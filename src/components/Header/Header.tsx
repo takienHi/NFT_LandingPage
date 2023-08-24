@@ -1,11 +1,6 @@
 import { useEffect, useState } from 'react';
-import Logo from './Logo';
-import SearchInput from './SearchInput';
-import Menu from './Menu';
-import MobileActions from './Menu/MobileActions';
-import MobileSidebar from './Menu/MobileSidebar';
-import MenuDesktop from './MenuDesktop';
-import HeaderDesktop from './HeaderDesktop';
+import Navbar from './NavBar';
+import SlideBar from './SlideBar';
 
 const Header = () => {
   const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
@@ -20,22 +15,23 @@ const Header = () => {
   });
 
   const openMobileMenu = () => {
-    console.log('openMobileMenu');
-
     setToggleMobileMenu(true);
   };
+
+  const closeMobileMenu = () => {
+    setToggleMobileMenu(false);
+  };
+
+  useEffect(() => {
+    console.log(toggleMobileMenu);
+    setTimeout(() => document.body.classList.toggle('nav-open-noscroll', toggleMobileMenu), 1000);
+  }, [toggleMobileMenu]);
+
   return (
     <>
-      <HeaderDesktop openMobileMenu={openMobileMenu} />
+      <Navbar openMobileMenu={openMobileMenu} />
 
-      {/* <header className={`js-page-header fixed top-0 z-20 w-full backdrop-blur transition-colors`}>
-        <div className='flex items-center px-6 py-6 xl:px-24'>
-          <Logo />
-          <SearchInput />
-          <Menu />
-          <MobileActions openMobileMenu={openMobileMenu} />
-        </div>
-      </header> */}
+      <SlideBar toggleMobileMenu={toggleMobileMenu} closeMobileMenu={closeMobileMenu} />
     </>
   );
 };

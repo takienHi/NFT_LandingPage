@@ -1,12 +1,10 @@
 import useRouteElements from './useRouteElements';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import './style.css';
-
+import './global.css';
+import './styles/myStyle.css';
 function App() {
   const routeElements = useRouteElements();
-  return <div>{routeElements}</div>;
+  return <>{routeElements}</>;
 }
 
 export default App;

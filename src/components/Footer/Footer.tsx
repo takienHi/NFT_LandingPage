@@ -1,3 +1,5 @@
+import LogoDesktop from '../LogoDesktop/LogoDesktop';
+
 const Footer = () => {
   return (
     <>
@@ -7,10 +9,9 @@ const Footer = () => {
           <div className='grid grid-cols-6 gap-x-7 gap-y-14 pt-24 pb-12 md:grid-cols-12'>
             <div className='col-span-full sm:col-span-3 md:col-span-4'>
               {/* Logo */}
-              <a href='index.html' className='mb-6 inline-block'>
-                <img src='img/logo.png' className='max-h-7 dark:hidden' alt='Xhibiter | NFT Marketplace' />
-                <img src='img/logo_white.png' className='hidden max-h-7 dark:block' alt='Xhibiter | NFT Marketplace' />
-              </a>
+
+              <LogoDesktop />
+
               <p className='mb-12 dark:text-jacarta-300'>
                 Create, sell and collect truly rare digital artworks. Powered by blockchain technology.
               </p>
@@ -181,7 +182,7 @@ const Footer = () => {
           </div>
           <div className='flex flex-col items-center justify-between space-y-2 py-8 sm:flex-row sm:space-y-0'>
             <span className='text-sm dark:text-jacarta-400'>
-              © Xhibiter — Made by
+              © Binance — Made by
               <a href='https://deothemes.com/' className='hover:text-accent'>
                 DeoThemes
               </a>

@@ -1,0 +1,60 @@
+/* @import './hero_carousel_css'; */
+
+body:has(.dark) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(13 16 45 / var(--tw-bg-opacity));
+}
+/* .group:hover {
+  @apply translate-y-[-10px] duration-500;
+} */
+
+header {
+  @apply select-none;
+}
+
+.gradient-box:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gradient-box:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to right, #4776e6, #8e54e9);
+  content: '';
+  z-index: -1;
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease-in;
+}
+
+.isNotCollapse {
+  margin-top: -100%;
+  transition: margin-top 0.8s ease-in;
+}
+
+.isCollapse {
+  margin-top: 0;
+  transition: margin-top 0.8s ease-in-out;
+}
+
+.cube {
+  cursor: pointer;
+}
+
+.menuScrollItem {
+  position: relative;
+  top: -100px;
+}
+
+.z-25 {
+  z-index: 25;
+}
+
+.menuScrollDropdown.active {
+  @apply text-accent  dark:text-accent;
+}
